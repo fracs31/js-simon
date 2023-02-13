@@ -1,0 +1,39 @@
+/* Regole generali */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+/* Gioco */
+.game {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Bottone per avviare la partita */
+.btn {
+    border: 1px solid black;
+    border-radius: 999px;
+    background-color: transparent;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Bottone in hover */
+.btn:hover {
+    background-color: #4ad66d;
+}
