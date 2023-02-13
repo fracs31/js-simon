@@ -1,5 +1,7 @@
 const randomNumbers = []; //array di numeri casuali
 const N = 5; //grandezza massima dell'array di numeri casuali
+const time = 30000; //30 secondi di attesa
+let counter = 5; //contatore
 
 //Ciclo
 for (let i = 0; i < N; i++) {
@@ -10,17 +12,31 @@ for (let i = 0; i < N; i++) {
 
 console.log(randomNumbers); //stampo in console l'array di numeri casuali
 
-//Ciclo
-for (let i = 0; i < N; i++) {
-    let userNumbers = parseInt(prompt("Inserire il numero:")); //chiedo all'utente di inserire i numeri
-    console.log("Numero inserito: " + userNumbers);
-    //Se i numeri inseriti dall'utente sono corretti
-    if (randomNumbers.includes(userNumbers)) {
-        console.log("Numero corretto: " + userNumbers); //stampo un messaggio di successo
+//Countdown
+const countdown = setInterval(function () {
+    //Se il contatore non è a zero
+    if (counter >= 0) {
+        console.log(counter); //stampo il i secondi
+        counter--; //decremento il contatore
     } else { //altrimenti
-        console.log("Numero sbagliato: " + userNumbers); //stampo un messaggio di errore
+        clearInterval(countdown); //elimino il countdown
     }
-}
+}, 1000);
+
+//Tempo di attesa
+/*setTimeout(function () {
+    //Ciclo
+    for (let i = 0; i < N; i++) {
+        let userNumbers = parseInt(prompt("Inserire il numero:")); //chiedo all'utente di inserire i numeri
+        console.log("Numero inserito: " + userNumbers);
+        //Se i numeri inseriti dall'utente sono corretti
+        if (randomNumbers.includes(userNumbers)) {
+            console.log("Numero corretto: " + userNumbers); //stampo un messaggio di successo
+        } else { //altrimenti
+            console.log("Numero sbagliato: " + userNumbers); //stampo un messaggio di errore
+        }
+    }
+}, time);*/
 
 //Funzione per generare dei numeri casuali
 function getRandomIntInclusive(min, max) {
