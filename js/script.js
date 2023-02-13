@@ -1,11 +1,12 @@
 const playElement = document.getElementById("play"); //bottone per giocare
+const scoreElement = document.getElementById("score"); //punteggio
 
 //Quando viene premuto il bottone per giocare
 playElement.addEventListener("click", function() {
     const randomNumbers = []; //array di numeri casuali
     const N = 5; //grandezza massima dell'array di numeri casuali
     const time = 30000; //30 secondi di attesa
-    let counter = 5; //contatore
+    let counter = 30; //contatore
     let guess = 0; //numero di numeri indovinati
     //Ciclo
     for (let i = 0; i < N; i++) {
@@ -40,8 +41,8 @@ playElement.addEventListener("click", function() {
                 console.log("Numero sbagliato: " + userNumbers); //stampo un messaggio di errore
             }
         }
-        console.log("Numeri indovinati: " + guess); //stampo in console il numero di numeri indovinati
-    }, 5000);
+        scoreElement.innerHTML = "Numeri indovinati: " + guess; //stampo il punteggio
+    }, time);
 });
 
 //Funzione per generare dei numeri casuali
